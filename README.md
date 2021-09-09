@@ -3,8 +3,8 @@ Simple socket server that fetches album covers through LastFM written in Python.
 
 ## About
 This project is intended to retrieve album covers for your currently playing track in ncmpcpp. It is implemented in two parts:
-*  which recieves info about currently playing tracks and downloads the fitting album cover.
-* A script which sends the server that info, which you will set up ncmpcpp to run on a track change.
+* `album_art.py`, a python socket server which recieves info about currently playing tracks and downloads the fitting album cover.
+* `client.sh`, a script which sends the server that info, which you will set up ncmpcpp to run on a track change.
 
 ## Dependencies
 * [mpc](https://musicpd.org/clients/mpc/), used in the script which sends currently playing track info to the python server
