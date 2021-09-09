@@ -38,5 +38,5 @@ You can use [feh](https://feh.finalrewind.org) or your image viewing program of 
 
 ## Configuration
 The following values can be configured based on your preferences.
-*The server runs on port 65432 by default. You can change this in `album_art.py` at line 19, but make sure you modify `client.sh` as well.
-*The default image path is `/tmp/album_cover.jpg`, but you can modify this at line 42 of `album_art.py`.
+* The server runs on port 65432 by default. You can change this in `album_art.py` at line 19, but make sure you modify `client.sh` as well.
+* The default image path is `/tmp/album_cover.jpg`, but you can modify this at line 42 of `album_art.py`.
