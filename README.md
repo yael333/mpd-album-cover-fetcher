@@ -5,12 +5,14 @@ Simple socket server that fetches album covers through LastFM written in Python.
 This project is intended to retrieve album covers for your currently playing track in [MPD](https://www.musicpd.org/). It is implemented in two parts:
 * `album_art.py`, a python socket server which recieves info about currently playing tracks and downloads the fitting album cover.
 * `client.sh`, a script which sends the server that info, which you will set up your MPD client to run on a track change.
+  * `client_deb.sh` is a version for users of debian-based distributions due to conflicting versions of netcat.
 
 ## Dependencies
 * [python](https://www.python.org/) and [pylast](https://github.com/pylast/pylast), the scripting language the server is written in and the required module for Last.fm API integration.
 * A [Last.fm](https://www.last.fm) account and [API application](https://www.last.fm/api).
 * [mpc](https://musicpd.org/clients/mpc/), used in the client script which sends currently playing track info to the python server
 * [netcat](https://nmap.org/ncat/), used by the client script to send the currently playing track info to the server.
+  * For Debian-based users, the correct apt repository is 'ncat'. Please also note the separate `client_deb.sh`.
 
 ## Setup
 Find `album_art.py` lines 6 to 9:
@@ -30,6 +32,7 @@ execute_on_song_change=/path/to/client.sh
 ```
 Obviously, you need to point that line to the location of the `client.sh` script.
 If you don't have a `~/.ncmpcpp/config`, make one, and ncmpcpp will use it as its default config.
+Debian-based users must also use the `client_deb.sh` script.
 
 ## Usage
 Run `album_art.py`. Now when you play a track on your MPD client, its album art will be written to `/tmp/album_cover.jpg`.
