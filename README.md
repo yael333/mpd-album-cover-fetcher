@@ -9,13 +9,16 @@ This project is intended to retrieve album covers for your currently playing tra
 
 ## Dependencies
 * [python](https://www.python.org/) and [pylast](https://github.com/pylast/pylast), the scripting language the server is written in and the required module for Last.fm API integration.
+  * [httpx](https://github.com/encode/httpx), a http client library for python
 * A [Last.fm](https://www.last.fm) account and [API application](https://www.last.fm/api).
 * [mpc](https://musicpd.org/clients/mpc/), used in the client script which sends currently playing track info to the python server
 * [netcat](https://nmap.org/ncat/), used by the client script to send the currently playing track info to the server.
   * For Debian-based users, the correct apt repository is 'ncat'. Please also note the separate `client_deb.sh`.
 
 ## Setup
-Find `album_art.py` lines 6 to 9:
+First, clone the repository. You will need to change the permissions of `client.sh` or `client_deb.sh` so your mpd client can access it; for example, by running `chmod 755 client.sh`.
+
+Next, find `album_art.py` lines 6 to 9:
 ```
 username = ""
 password_hash = pylast.md5("")
